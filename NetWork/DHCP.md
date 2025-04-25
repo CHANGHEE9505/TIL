@@ -19,7 +19,7 @@
 
 ---
 
-##  실습 1: 임대 생성
+##  실습 1️⃣ 임대 생성
 
 ###  DHCP Server 설치
 
@@ -122,9 +122,30 @@
 
 ![성공 화면](./img/DHCPimg/24.png)
 
+---
 
+## 샥스핀을 이용한 패킷 확인
+- DHCP Server에서 Client에게 부여한 IP가 올라와 있는 '주소 임대'에서 IP를 삭제한다.
 
+- DHCP Server와 DHCP Client에서 샥스핀을 실행해 놓는다.
 
+- DHCP Client에서 cmd를 실행한 후 'ipconfig /release'와 'ipconfig /renew'를 순서대로 입력, 실행한다.
+- 임대받은 IP를 확인한 후 두 시스템에서샥스핀을 종료한다.
+
+![성공 화면](./img/DHCPimg/26.png)
+
+---
+- '필터링(^ + /)' 확인 입력란에 'dhcp'를 입력하면 해당 프로토콜을 사용한
+    내용만 출력된다.
+- 4개의 패킷(Discover → Offer → Request → Ack)'이 순서대로
+    Broadcasting 되고 있는 것을 확인한다.
+![성공 화면](./img/DHCPimg/27.png)
+
+---
+
+![성공 화면](./img/DHCPimg/28.png)
+
+---
 
 
 
