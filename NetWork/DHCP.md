@@ -147,5 +147,35 @@
 
 ---
 
+## 예약 주소 임대
+server100에서 주소임대 삭제후 Client100에서 MACAddress를 가져온다
+```
+ipconfig /all
+```
+물리적 주소를 복사한다.
+![성공 화면](./img/DHCPimg/51.png)
+
+---
+SRV100으로 가서 MAC 주소와 부여하고 싶은 IP주소값을 부여한다.
+![성공 화면](./img/DHCPimg/52.png)
+
+---
+예약을 확인 할 수 있다.
+![성공 화면](./img/DHCPimg/53.png)
+
+---
+Client100에서 다시
+```
+ipconfig /release
+ipconfig /renew
+```
+IP주소를 받아온다.
+![성공 화면](./img/DHCPimg/54.png)
+
+---
+- 완료
+![성공 화면](./img/DHCPimg/55.png)
+
+---
 
 
