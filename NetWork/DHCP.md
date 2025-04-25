@@ -59,7 +59,9 @@
 3. **DHCP 범위 활성화**
 
 ![세부 설정 1](./img/DHCPimg/14.png)  
-![세부 설정 2](./img/DHCPimg/15.png)  
+- 
+![세부 설정 2](./img/DHCPimg/15.png) 
+- 이름서버, DNS 서버 추가 후 IP 추가
 ![세부 설정 3](./img/DHCPimg/16.png)
 
 ---
@@ -70,5 +72,59 @@
 
 ![주소 임대 확인](./img/DHCPimg/17.png)
 
-### DHCP Client
+## 💻 DHCP Client 실습
+
+
+### 1️⃣ IP 주소를 할당받기 위한 작업
+
+- 네트워크 어댑터 설정 변경  
+  → **"사용 안 함" → 다시 "사용함"으로 변경**
+
+![IP 설정 1](./img/DHCPimg/18.png)  
+![IP 설정 2](./img/DHCPimg/19.png)
+
+---
+
+### 2️⃣ IP 할당 시도
+
+- DHCP 서버로부터 IP 주소를 받아오려 했지만 오류 발생
+
+![오류 발생](./img/DHCPimg/20.png)
+
+---
+
+### 3️⃣ 오류 해결 과정
+
+#### 🚫 여전히 오류 발생
+
+- Virtual Machine Settings에서 **네트워크 어댑터를 `Host-only`로 변경**
+
+![Host-only 설정](./img/DHCPimg/21.png)
+
+- 그러나 여전히 IP 할당 실패
+
+![오류 지속 1](./img/DHCPimg/22.png)  
+![오류 지속 2](./img/DHCPimg/25.png)
+
+---
+
+#### 🔧 설정 변경: VMware 네트워크 설정
+
+- **VMnet1 설정 → "Use local DHCP service to distribute IP address to VMs" 체크 해제**
+
+![DHCP 서비스 해제](./img/DHCPimg/23.png)
+
+---
+
+### ✅ 성공적으로 IP 할당
+
+- DHCP 서버에서 1~50번은 제외했기 때문에, **192.168.100.51**부터 할당 시작됨
+
+![성공 화면](./img/DHCPimg/24.png)
+
+
+
+
+
+
 
