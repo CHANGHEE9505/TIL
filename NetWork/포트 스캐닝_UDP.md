@@ -86,5 +86,5 @@ sudo dnsmap gusiya.com
 
 - 192.168.10.132 → CentOS (서버)
 
-- 192.168.10.130 → Window 10
+- 192.168.10.130 → Window 10<br>
 ![구간](./img/포트스캐닝.img/11.png)
