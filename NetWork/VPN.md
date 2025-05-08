@@ -64,3 +64,72 @@
 |----------------|-------------------------------|
 | **VPN Server** | VPN 접속 허용 및 인증 담당 서버 |
 | **VPN Client** | VPN을 통해 서버에 접속하는 사용자 장치 |
+
+---
+## VPN Server
+### 라우팅 및 원격 액세스에서의 설정
+
+![vpn1](./img/VPNimg/1.png)<br>
+
+![vpn2](./img/VPNimg/2.png)<br>
+
+![vpn3](./img/VPNimg/3.png)<br>
+
+![vpn4](./img/VPNimg/4.png)<br>
+
+![vpn5](./img/VPNimg/5.png)<br>
+
+![vpn6](./img/VPNimg/6.png)<br>
+
+![vpn7](./img/VPNimg/7.png)<br>
+
+![vpn8](./img/VPNimg/8.png)<br>
+
+#### 나머지는 기본값
+![vpn8](./img/VPNimg/9.png)<br>
+
+### vpn Service를 사용할 사용자 생성
+![](./img/VPNimg/10.png)<br>
+
+![](./img/VPNimg/11.png)<br>
+
+생성된 VPNuser 더블 클릭
+![](./img/VPNimg/12.png)<br>
+
+## VPN Client
+
+![](./img/VPNimg/13.png)<br>
+
+![](./img/VPNimg/14.png)<br>
+
+![](./img/VPNimg/15.png)<br>
+
+![](./img/VPNimg/16.png)<br>
+
+![](./img/VPNimg/17.png)<br>
+
+![](./img/VPNimg/18.png)<br>
+
+![](./img/VPNimg/19.png)<br>
+
+![](./img/VPNimg/20.png)<br>
+
+![](./img/VPNimg/21.png)<br>
+
+![](./img/VPNimg/22.png)<br>
+
+![](./img/VPNimg/23.png)<br>
+
+![](./img/VPNimg/24.png)<br>
+
+![](./img/VPNimg/25.png)<br>
+
+![](./img/VPNimg/26.png)<br>
+
+![](./img/VPNimg/27.png)<br>
+
+## client 200
+![](./img/VPNimg/28.png)<br>
+똑같이 작업
+
+![](./img/VPNimg/29.png)<br>
