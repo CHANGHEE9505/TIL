@@ -185,7 +185,18 @@ SRV100으로 이동<br>
 ### 테스트 1.
 - 'ICMP' 가 출력된다.
 
-- 방화벽 구성
+![](./img/IPSec.img/105.png)<br>
 
-- 테스트 2.
-  - 'ESP'가 출력된다.
+![](./img/IPSec.img/106.png)<br>
+
+- 방화벽 구성
+window로고 + R
+secpol.msc 치고
+SRV100, Client100 모두 구성
+![](./img/IPSec.img/107.png)<br>
+
+### 테스트 2.
+- 'ESP'가 출력된다.
+![](./img/IPSec.img/108.png)<br>
+
+![](./img/IPSec.img/109.png)<br>
