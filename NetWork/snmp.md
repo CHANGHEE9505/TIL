@@ -164,13 +164,8 @@ snmptranslate -T(able)d(escription) <MIB명>
 
 ## 실행
 1. 오류
+
 ![](./img/snmp/14.png)
 <br>
 ![](./img/snmp/15.png)
-<br>
-![](./img/snmp/14.png)
-<br>
-![](./img/snmp/14.png)
-<br>
-![](./img/snmp/14.png)
 
