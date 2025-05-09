@@ -87,7 +87,8 @@ cp -p snmpd.conf snmpd.conf.samadal
 ![](./img/snmp/4.png)
 
 ## 방화벽 구성
-서비스만 
+서비스만 <br>
+
 ![](./img/snmp/5.png)
 
 ```
