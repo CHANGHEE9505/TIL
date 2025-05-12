@@ -1,180 +1,163 @@
-# 📘 Proxy Server
+
+# 🌐 Paros 실습 보고서
+
+## 📌 개요
+
+Paros는 **웹 사이트의 취약점을 분석하는 프록시 도구**로, 사용자 요청과 응답을 중간에서 가로채어 분석할 수 있도록 해주는 도구입니다.
 
 ---
 
-## 1. 웹을 통해 나타나는 일반적인 유형
+## 🖥️ 실습 환경 (NAT 구성)
 
-### 🔹 HTTP Request (요청)
-- `GET / HTTP/1.1`
-
-### 🔹 HTTP Response (응답)
-- `HTTP/1.1 200 OK`
-
----
-
-## 2. Web Proxy
-
-### 🔹 개요
-
-> 💡 프록시 서버는 **PC와 인터넷 사이에서 중개자 역할을 수행**합니다.
-
-- 인터넷과의 직접 통신을 막고, 대신 **프록시 서버를 통해 요청 및 응답을 주고받는 방식**
-- 네트워크 보안 및 **IP 우회**, **패킷 감시** 등에 활용됨
-- 일반적으로 **방화벽(Firewall)** 역할도 함께 수행
-
-📌 **Proxy Server를 거치면 Server는 실제 Client의 IP를 알 수 없음**  
-→ 보안과 익명성 보장 가능
-
----
-
-### 🔹 Proxy Server vs Web Proxy
-
-| 항목           | Proxy Server                                             | Web Proxy                                                 |
-|----------------|----------------------------------------------------------|------------------------------------------------------------|
-| **정의**        | 다양한 네트워크 서비스에 간접적으로 접속하게 해주는 서버 | **웹 요청/응답**을 중개하는 HTTP 중심의 프록시             |
-| **기능**        | - 캐시 기능<br>- 보안 및 접근 제어<br>- 패킷 감시 및 수정 | - 웹 데이터 중개<br>- 클라이언트 요청을 서버에 재전송        |
-| **역할**        | 클라이언트 대신 외부 서비스에 접근하여 응답 전달         | 브라우저 ↔ 서버 사이에 위치해 HTTP 요청·응답 처리           |
-| **활용 예시**   | 방화벽, DNS 프록시, SMTP 프록시 등 다양한 프로토콜 지원  | 학교/회사에서 인터넷 필터링, 우회 접속, 웹 캐시 서버 등     |
-| **보안 감시**   | ✔ 가능 (패킷 단위)                                       | ✔ 가능 (HTTP 기반 패킷 감시 및 조작)                        |
-
----
-
-### 🔹 기타 특징
-
-- 프록시 서버는 **캐시(Cache)**를 활용해 자주 요청되는 데이터를 빠르게 제공
-- 보안 목적으로 **웹 필터링**, **사용자 추적 차단**, **로그 기록** 기능 제공
-- **역방향 프록시(Reverse Proxy)**는 서버 측에서 부하분산 및 보안을 위해 사용됨
-
----
-
-## ✅ 요약
-
-- Proxy는 **중개자**이며, 보안, 익명성, 캐시, 필터링 등의 목적
-- Web Proxy는 **웹 전용 프록시**로 브라우저와 웹 서버 사이에서 통신을 중계
-- **Client ↔ Proxy ↔ Server** 구조로 IP 감춤 및 요청 제어 가능
-
-# 📘 Web Proxy 실습 - Odysseus 활용
-
----
-
-## 실습 1. Odysseus 기반 Web Proxy 구성 without DB
-
-### 🖥️ 작업환경 (NAT 구성)
-
-#### ✅ 테스트용 시스템
-- CentOS (DNS, Web Server, DB Server 통합)
+### ✅ 테스트용 시스템 (서버)
+- OS: CentOS
+- 역할: DNS, Web Server, DB Server 통합
 - IP: `192.168.10.132`
 - 게이트웨이: `192.168.10.2`
 - DNS: `192.168.10.132`
 
-#### ✅ Web Proxy 시스템
-- Windows 10
-- Odysseus 설치
+### ✅ Web Proxy 시스템
+- OS: Windows 10
+- 설치 도구: Odysseus
 - IP: `192.168.10.130`
 - 게이트웨이: `192.168.10.2`
 - DNS: `192.168.10.132`
 
-
-#### ✅ Kali Linux 시스템
+### ✅ Kali Linux 시스템
 - IP: `192.168.10.128`
 - 게이트웨이: `192.168.10.2`
 - DNS: `192.168.10.132`
----
-
-## 2. 작업 1: 기본 웹 문서 출력 without DB
-
-### ✅ 단계별 작업
-
-1. **네임서버 조회**
-2. **기본 웹 문서 파일 생성**
-3. **사이트 출력 테스트 1차**
-4. **Odysseus 실행 및 옵션 설정**
-
-📸 실행 화면:
-- Odysseus 실행  
-  ![](./img/Proxy.img/1.png)<br>
-- 옵션 체크  
-  ![](./img/Proxy.img/2.png)<br>
-- 사이트 출력 결과  
-  ![](./img/Proxy.img/3.png)<br>
-- 로그 확인  
-  ![](./img/Proxy.img/4.png)<br>
 
 ---
 
-## 3. 작업 2: `login.html`을 기본 경로로 생성
+## 📦 사전 준비
 
-### 🚨 매우 중요: 실행 중인 Odysseus는 반드시 중지할 것!
+### ✅ Java 설치
+- 링크: https://www.oracle.com/java/technologies/downloads/#java8-windows
+- 설치 후 `환경변수 설정` 필수
+- 설정 방법: `sysdm.cpl` 실행 후 환경변수 추가
 
-> **⚠️ 시스템 트레이에서 동작 중인 Odysseus를 먼저 종료해야 합니다.**  
-> (중복 실행 시 충돌 발생)
+> ![](./img/Proxy.img/10.png)  
+> ![](./img/Proxy.img/11.png)  
+> ![](./img/Proxy.img/12.png)  
+> ![](./img/Proxy.img/13.png)  
 
-📸 참고 화면:
-![](./img/Proxy.img/5.png)<br>
-![](./img/Proxy.img/6.png)<br>
+---
 
-📜 **기본 웹 문서(login.html)**
+### ✅ Apache ANT 설치
+- 링크: https://ant.apache.org/bindownload.cgi
+- 설명:
+  - Java 빌드 자동화 도구
+  - 기본 빌드 파일명: `build.xml`
+- 설치:
+  - 압축 해제 후 Java 디렉토리에 복사
+- 환경변수 설정 필수
 
+> ![](./img/Proxy.img/14.png)  
+> ![](./img/Proxy.img/15.png)  
+> ![](./img/Proxy.img/16.png)  
+> ![](./img/Proxy.img/17.png)  
+
+---
+
+## 🔍 Paros 설치 및 실행
+
+- 링크: https://sourceforge.net/projects/paros/files/Paros/
+- 설치 후 실행
+
+> ![](./img/Proxy.img/18.png)  
+> ![](./img/Proxy.img/19.png)  
+> ![](./img/Proxy.img/20.png)  
+
+---
+
+## ✅ 테스트 1: without DB
+
+### Windows 10에서 Proxy 설정
+> ![](./img/Proxy.img/21.png)  
+> ![](./img/Proxy.img/22.png)  
+
+---
+
+### ▶ 실행 1: 포트 미설정 (비정상)
+
+**Request**
+```
+GET http://www.gusiya.com/favicon.ico HTTP/1.1
+Host: www.gusiya.com
+Proxy-Connection: keep-alive
+User-Agent: ... Paros/3.2.13
+Accept: ...
+Referer: http://www.gusiya.com/
+Accept-Language: ko,en;q=0.9,en-US;q=0.8
+```
+
+**Response**
+```
+HTTP/1.1 404 Not Found
+Server: Apache/2.4.6 (CentOS) PHP/7.4.33
+...
+```
+
+**HTML 출력**
 ```html
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>로그인 페이지</title>
-</head>
-<body>
-    <div class="login-wrapper">
-        <h2>Login</h2>
-        <form method="post" action="서버의url" id="login-form">
-            <input type="text" name="userName" placeholder="ID">
-            <input type="password" name="userPassword" placeholder="Password">
-            <label for="remember-check">
-                <input type="checkbox" id="remember-check"> 아이디 저장하기
-            </label>
-            <input type="submit" value="Login">
-        </form>
-    </div>
-</body>
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>404 Not Found</title>
+</head><body>
+<h1>Not Found</h1>
+<p>The requested URL /favicon.ico was not found on this server.</p>
+</body></html>
+```
+
+---
+
+### ▶ 실행 2: 포트 8080 설정 (정상)
+
+**Request**
+```
+GET http://www.gusiya.com/ HTTP/1.1
+Host: www.gusiya.com
+...
+User-Agent: ... Paros/3.2.13
+```
+
+**Response**
+```
+HTTP/1.1 200 OK
+Server: Apache/2.4.6 (CentOS) PHP/7.4.33
+Content-Type: text/html; charset=UTF-8
+...
+```
+
+**HTML 출력**
+```html
+<html>
+  <head>
+    <title> CludDX! </title>
+  </head>
+  <body>
+    <H2> Head Bar ... </H2>
+    <HR>
+    CloudDX Clouding...!
+  </body>
 </html>
 ```
 
-### ✅ 사이트 출력 테스트 2차
+---
 
-- `www.gusiya.com/login.html` 검색  
-  ![](./img/Proxy.img/7.png)<br>
+## ✅ 테스트 2: with DB
 
-### ✅ 로그 확인
+- 방화벽 설정 없음
+> ![](./img/Proxy.img/23.png)  
+> ![](./img/Proxy.img/24.png)  
 
-![](./img/Proxy.img/8.png)<br>
-![](./img/Proxy.img/9.png)<br>
+- POST 방식에서 비밀번호 평문 노출 → 보안 취약점 노출 가능성 있음
 
 ---
 
-## 실습 2.  with DB
+## 🔑 정리
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 4. 악성코드 생성 시스템 구성
-
-
-
-### 🐍 작업 목표
-
-- Kali에서 **악성코드를 삽입**하여 CentOS 웹 페이지에 전파
-- 사용자가 실행 시 Odysseus 로그를 통해 **계정 정보 또는 요청 내용 편취**
-
----
-
-
-
+- Paros를 통해 웹 트래픽을 중간에서 확인하여 보안 취약점을 쉽게 파악 가능
+- 포트 설정 여부에 따라 정상 작동 여부 판단
+- 로그인 등 민감 데이터가 평문으로 전달되는 경우, 보안 설정 필수
