@@ -79,7 +79,7 @@
     - '외부 시스템(Windows 10)' 에서 접속할 '사용자(winsamadal)를 생성
     - ASP(Active Server Page, 오직 'windows System'에서만 동작) 사용을 위해서 IIS를 추가하고 FTP Server도 활성화
 
-## ✅ windows Server 2022(client100)
+## ✅ windows Server 2022(client100) ---> [IIS설치](https://github.com/CHANGHEE9505/TIL/blob/main/NetWork/IIS%EC%84%A4%EC%B9%98.md)
 - 서버관리자
 
 ![](./img/Web%20Language.img/0001.png)
