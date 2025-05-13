@@ -123,6 +123,7 @@ systemctl restart httpd
 #### https 전용 포트(443) 추가
 
 ![](./img/HTTPS.img/0012.png)
+
 추가 후 데몬 재실행
 ```
 firewall-cmd --reload
