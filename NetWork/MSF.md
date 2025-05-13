@@ -262,7 +262,7 @@ Killing: 4912          ----------> 윈도우 cmd창 종료됨
 meterpreter > reboot   ----------> 윈도우에서 다시 시작함
 Rebooting...
 meterpreter >
-[*] 192.168.10.130 - Meterpreter session 1 closed.  Reason: Died
+[*] 192.168.10.130 - Meterpreter session 1 cl osed.  Reason: Died
 ```
 
 >reboot, shutdonw<br>
