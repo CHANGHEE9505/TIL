@@ -229,8 +229,25 @@ web 말고 VMWare 먼저 접속시 초기설정 바로 진행
 
 ![](./img/IPS.img/0040.png)
 
+![](./img/IPS.img/0041.png)
+
+![](./img/IPS.img/0042.png)
+
+![](./img/IPS.img/0043.png)
+
+![](./img/IPS.img/0044.png)
+
+![](./img/IPS.img/0045.png)
+
+vi /etc/resolv.conf<br>
+super dns
+
+![](./img/IPS.img/0046.png)
+```
+route add default gw 192.168.10.2 eth2
+```
+ping 확인
+
+![](./img/IPS.img/0047.png)
 
 
-### Step 4.
-- Step 1.
-- Step 1.
