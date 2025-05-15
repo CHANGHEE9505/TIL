@@ -1,4 +1,4 @@
-# 📘 IDS/IPS 
+# 📘 IDS 
 
 ## 1. 개요
 
@@ -8,7 +8,7 @@
 
 - Victim 시스템에 Snort를 설치하고 진행하는 kali를 이용한다.
 
-## IDS / IPS
+## IDS /
    
 
 ### IDS (Intrusion **Detection** System, 침입 탐지 시스템)
@@ -17,7 +17,7 @@
 - 룰 기반의 패턴 매치 기법으로 악의적인 공격 시도를 **탐지**하여 내부 자산의 피해를 최소화하기 위한 시스템을 말한다.
 
 
-### IPS (Intrusion **Protection** System, 침입 차단 시스템)
+### (Intrusion **Protection** System, 침입 차단 시스템)
       
       
 - IDS와 같이 패턴 매치 기법으로 공격을 탐지하고 **차단 및 방어** 기능도 포함한 시스템을 말한다.
@@ -71,7 +71,7 @@ drwx------ 2 _apt root 4096 May 13 17:56 partial
 
 [samadal@kali ~]$ sudo vi /etc/apt/sources.list
 
-![](./img/IDS.IPS.img/0001.png)
+![](./img/IDS.img/0001.png)
 ```
 deb http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse
 deb-src http://archive.ubuntu.com/ubuntu/ focal main restricted universe multiverse
@@ -101,7 +101,7 @@ sudo apt install snort
 ```
 #### 확인
 
-![](./img/IDS.IPS.img/0002.png)
+![](./img/IDS.img/0002.png)
 
 ## 실습
 
@@ -138,7 +138,7 @@ sudo apt install snort
 ```
 ### 예제 2. 패킷 헤더 확인
 **IP와 TCP/UDP/ICMP의 헤더를 확인한다.**
-![](./img/IDS.IPS.img/0003.png)
+![](./img/IDS.img/0003.png)
 
 ```
 sudo snort -v
@@ -158,28 +158,28 @@ Fatal Error, Quitting..
 
 ```
 
-![](./img/IDS.IPS.img/0004.png)
+![](./img/IDS.img/0004.png)
 ```
 sudo snort -v > /home/samadal/snort-v.log
 less /home/samadal/snort-v.log
 ```
 
-![](./img/IDS.IPS.img/0005.png)
+![](./img/IDS.img/0005.png)
 
 #### Pkts/sec (초당 전송되는 패킷 수)
 #### Analyzed (패킷 입출력에서의 탐지율 분석)
 #### Outstanding (4개는 두드러진 특징을 갖고 있다고 분석)
 
-![](./img/IDS.IPS.img/0006.png)
+![](./img/IDS.img/0006.png)
 #### IP4 / TCP / UDP / ICMP (탐지율)
 
-![](./img/IDS.IPS.img/0007.png)
+![](./img/IDS.img/0007.png)
 
 #### 192.168.10.1 은 DHCP
 
 #### 샥스핀을 이용한 패킷 분석
 
-![](./img/IDS.IPS.img/0008.png)
+![](./img/IDS.img/0008.png)
 
 
 ### 예제 3. 패킷 헤더 확인 (-d)
@@ -188,17 +188,17 @@ IDS가 동작하고 있으며 외부로 부터 들어오는 패킷을 탐지하�
 내부에서 외부로 나가는 패킷을 해독된 상태로 출력을 한다.<br>
 '출력이 해독' 되었다는 것은 문제를 드러내는 것과 동일하지만 여기서는 전혀 문제가 되지 않는다. 왜? 외부로 나가는 것은 IDS와 무관하기 때문이다. 즉, 침입이 아니기 때문이다.
 
-![](./img/IDS.IPS.img/0009.png)
+![](./img/IDS.img/0009.png)
 
 단순 실행
 ```
 sudo $sudo snort -vde
 ```
 
-![](./img/IDS.IPS.img/0010.png)
+![](./img/IDS.img/0010.png)
 맥주소 추가 
 
-![](./img/IDS.IPS.img/0011.png)
+![](./img/IDS.img/0011.png)
 
 
 #### 로그 파일 생성 1. Ethernet 헤더와 Application 데이터를 로그 디렉터리에 파일로 저장
@@ -208,7 +208,7 @@ sudo $sudo snort -vde
 $sudo snort -dev -l ./
 ```
 
-![](./img/IDS.IPS.img/0012.png)
+![](./img/IDS.img/0012.png)
 
 
 필요한 갯수 만큼 저장
@@ -222,7 +222,7 @@ r 옵션을 써야 확인 가능
 sudo snort -der snort.log.1747202823
 ```
 
-![](./img/IDS.IPS.img/0013.png)
+![](./img/IDS.img/0013.png)
 
 ### 예제 5. tcpdump 형식으로 로그 패킷을 전송하고 경고를 생성한다.
 
@@ -266,7 +266,7 @@ sudo snort -der snort.log.1747202823
 - rule 설정
 - 명령 실행
 
-![](./img/IDS.IPS.img/0014.png)
+![](./img/IDS.img/0014.png)
 
 ## 실습 2. 'Client의 웹브라우저' 에서 '사이트(gusiya.com)' 출력을 시도할 때의 탐지
 
@@ -289,7 +289,7 @@ sudo snort -der snort.log.1747202823
 
 룰 하나 더 추가
 
-![](./img/IDS.IPS.img/0015.png)
+![](./img/IDS.img/0015.png)
 
 ```
          =+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+=+      GET / HTTP/1.1 (Request)
@@ -369,9 +369,9 @@ sudo snort -der snort.log.1747202823
          35 63 62 64 36 38 66 32 65 39 65 66 34 22 0D 0A  5cbd68f2e9ef4"..
          0D 0A                                            ..
 ```
-![](./img/IDS.IPS.img/0016.png)
+![](./img/IDS.img/0016.png)
 
-![](./img/IDS.IPS.img/0017.png)
+![](./img/IDS.img/0017.png)
 
 ```
 sudo snort -vd > /home/samadal/rules-2.txt
@@ -392,3 +392,151 @@ alert tcp 192.168.10.0/24 any -> any 80 (msg:"Get loudDX"; content:"GET"; sid:11
 sudo snort -vdc /etc/snort/rules/local.rules -i eth0 > /home/samadal/rules-vdc.log
 ```
 
+## Security Onion
+
+### 개요
+
+- 보안 모니터링 및 로그 관리를 위한 무료 오픈소스 Linux 배포판
+- Snort 패턴 작업 업문에서 Security Onion 애플리케이션을 사용한다.
+- Ubunut 64bit를 기반으로 개발되었다.
+
+
+### 다운로드 및 초기 환경 구성
+
+- 'Security Onion ISO' 다운로드
+    - 공식 사이트
+    - 미러 사이트 [링크 사이트](securityonionsolutions.com)
+
+## 🖥️ 실습 환경 (NAT 구성)
+
+### ✅ Security
+- IP: `192.168.10.128`
+- 게이트웨이: `192.168.10.2`
+- DNS: `192.168.10.2`
+
+### 설치
+
+![](./img/IDS.img/0019.png)
+
+![](./img/IDS.img/0018.png)
+
+![](./img/IDS.img/0022.png)
+
+![](./img/IDS.img/0020.png)
+
+![](./img/IDS.img/0021.png)
+
+![](./img/IDS.img/0023.png)
+
+### 초기화면
+![](./img/IDS.img/0024.png)
+설치가 완료된 화면이 아니고 설치를 할 수 있는 화면이다.
+
+#### ISO 삽입 후 설치
+
+![](./img/IDS.img/0025.png)
+
+![](./img/IDS.img/0026.png)
+
+![](./img/IDS.img/0027.png)
+
+![](./img/IDS.img/0028.png)
+
+![](./img/IDS.img/0029.png)
+
+![](./img/IDS.img/0030.png)
+
+![](./img/IDS.img/0031.png)
+
+![](./img/IDS.img/0032.png)
+
+![](./img/IDS.img/0033.png)
+
+![](./img/IDS.img/0034.png)
+여기서 iso 파일 제거
+
+![](./img/IDS.img/0035.png)
+
+### 네트워크 설정
+#### 기본설정
+
+로그인 한 초기화면
+![](./img/IDS.img/0036.png)
+
+
+iso 파일 삽입 
+
+![](./img/IDS.img/0039.png)
+
+![](./img/IDS.img/0040.png)
+
+![](./img/IDS.img/0041.png)
+
+![](./img/IDS.img/0038.png)
+
+![](./img/IDS.img/0037.png)
+
+sudo ./vmware-install.pl
+
+처음에만 yes 나머지 기본값 Enter
+
+#### 네트워크 추가
+![](./img/IDS.img/0042.png)
+
+![](./img/IDS.img/0043.png)
+
+### 보안 도구
+##### 기본 작업
+
+![](./img/IDS.img/0044.png)
+
+![](./img/IDS.img/0045.png)
+
+- Evaluation Mode
+    - 처음 사용하는 사용자에게 적합한 모드이다.
+- Production Mode
+    - 세부설정을 하고자하는 사용자에게 적합한 모드이다.
+
+우리는 **Evaluation Mode** 선택
+
+![](./img/IDS.img/0046.png)
+
+![](./img/IDS.img/0047.png)
+
+P@ssw0rd2
+
+![](./img/IDS.img/0048.png)
+
+보안도구 설치 완
+
+### 원격 접속
+
+![](./img/IDS.img/0049.png)
+
+![](./img/IDS.img/0050.png)
+
+### Sguil 도구 (Snort 패턴 작성 및 Sguil 접속 확인)
+
+- **Rules** 수정 및 업데이트 
+
+![](./img/IDS.img/0051.png)
+
+![](./img/IDS.img/0052.png)
+
+
+rule-update
+
+![](./img/IDS.img/0053.png)
+
+- 실행
+
+![](./img/IDS.img/0054.png)
+
+![](./img/IDS.img/0055.png)
+
+P@ssw0rd2
+- 테스트
+
+![](./img/IDS.img/0056.png)
+
+![](./img/IDS.img/0057.png)
