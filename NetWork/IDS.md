@@ -460,7 +460,9 @@ sudo snort -vdc /etc/snort/rules/local.rules -i eth0 > /home/samadal/rules-vdc.l
 ### 네트워크 설정
 #### 기본설정
 
+
 로그인 한 초기화면
+
 ![](./img/IDS.img/0036.png)
 
 
@@ -523,6 +525,9 @@ P@ssw0rd2
 
 ![](./img/IDS.img/0052.png)
 
+```
+alert icmp any any -> any any (msg:“Have a nice day!”; sid:1000001;)
+```
 
 rule-update
 
