@@ -78,7 +78,7 @@
 
 #### 128
 
-##### 저장소 추가
+#### 저장소 추가 후 'Ansible' 설치
 
 ![](./img/1.img/0001.png)
 
@@ -93,5 +93,33 @@ yum -y install ansible
 rpm -qa | grep ansible
 ansible --version
 ```
+
+#### Step 2. SSH Key 생성
+- 개요
+  - Ansible 은 SSH 접속 을 기반으로 원격 서버들에게 명령을 전달 하기 때문에 Controller서버와 원격 서버간 SSH Key가 공유 되어야 한다.
+  - Controller 서버 에서 모든 것을 완료할 수 있다.
+
+- 작업
+- 인증키 생성
+
+![](./img/1.img/0003.png)
+```
+ssh-keygen
+```
+![](./img/1.img/0004.png)
+```
+ssh-copy-id root@192.168.10.129
+```
+
+- 원격 서버에 키 복사 및 확인
+
+![](./img/1.img/0005.png)
+
+- 접속 테스트
+
+![](./img/1.img/0006.png)
+
+
+
 
 
