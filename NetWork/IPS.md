@@ -4,7 +4,7 @@
 - 'Sophos'사에서 리눅스 커널을 이용해서 만든 **UTM(Unified Threat Management) 장비**를 말한다.
 - **IPS(침입차단시스템), IDS(침입탐지시스템), Anti Virus, Firewall, VPN** 등의 보안 기능 중 최대 **8개** 정도를 **하나의 프로그램에 통합**한 통합 보안 장비이다.
 - 보안 사고를 예방하고 신속히 대응하며, **보다 쉽게 보안 관리를 가능하게** 하기 위해 기존 보안 제품을 통합한 장비이다.
-- 통합 보안 관리 장비로서 **UTM(Security Management)**의 역할을 수행한다.
+- 통합 보안 관리 장비로서 **UTM(Security Management)** 의 역할을 수행한다.
 - 특히 **방화벽** 성격이 강해 `Sophos UTM Firewall`이라고도 불린다.
 
 ---
@@ -195,8 +195,9 @@
     - 기본적으로 **VMnet1**만 **활성화** 되어 있다.
 
 ### Step 2. **Interface** 추가
-    - **Interfaces & Routing** 하단에 있는 **Interfaces**를 클릭한다.
-    - 우측에 있는 **Interfaces** 탭 하단에 있는 **New Interface...**를 클릭한다.
+
+- **Interfaces & Routing** 하단에 있는 **Interfaces**를 클릭한다.
+- 우측에 있는 **Interfaces** 탭 하단에 있는 **New Interface...** 를 클릭한다.
  
 ![](./img/IPS.img/0036.png)
 
