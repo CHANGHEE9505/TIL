@@ -265,7 +265,7 @@ echo "192.168.10.129" > customized_inven.1st
   - 사용자를 추가/삭제/관리하기에 유용한 기능을 제공한다.
 #### 작업환경
   - 신규 시스템 한 개 더 추가한다.
-#### 작업 1. 사용자 추가()
+#### 작업 1. 사용자 추가(-m user -a "name=유저")
 - (오류) 'Node의 IP'가 등록된 '파일(customized_inven.1st)'을 이용해서 사용자 추가
 - 인벤토리 파일에 신규 Node의 IP를 등록하고 사용자 추가
 
@@ -288,3 +288,16 @@ ssh-copy-id root@192.168.10.130
 
 ![](./img/1.img/0028.png)
 
+![](./img/1.img/0029.png)
+
+```
+ansible all -m user -a "name=clouddx"
+```
+
+```
+ansible all -i customized_inven.1st -m user -a "name=clouddx"
+```
+
+#### 작업 2. 사용자 삭제(-m user -a "name = 유저 state=absent")
+
+![](./img/1.img/0030.png)
