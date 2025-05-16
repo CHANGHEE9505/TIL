@@ -301,3 +301,105 @@ ansible all -i customized_inven.1st -m user -a "name=clouddx"
 #### 작업 2. 사용자 삭제(-m user -a "name = 유저 state=absent")
 
 ![](./img/1.img/0030.png)
+
+### 'yum' Module 
+### 작업 1. 패키지 설치 유무에 따른 학습
+#### 패키지 확인
+![](./img/1.img/0031.png)
+
+
+#### 패키지가 설치되어 있는 경우
+![](./img/1.img/0032.png)
+
+
+#### 패키지가 설치되어 있지 않은 경우
+
+![](./img/1.img/0033.png)
+
+![](./img/1.img/0034.png)
+
+![](./img/1.img/0035.png)
+
+![](./img/1.img/0036.png)
+
+### 작업 2. Ansible 환경설정 변경 유무에 따른 패키지 확인
+- 패키지 확인 -Ansible 환경설정 수정 전
+- 패키지 확인 -Ansible 환경설정 수정 후
+
+```
+find / -name ansible.cfg -type f
+```
+
+![](./img/1.img/0037.png)
+
+```
+vi /etc/ansible/ansible.cfg  
+```
+188 번 주석 해제
+
+![](./img/1.img/0038.png)
+```
+[WARNING]: Consider using the yum, dnf or zypper module rather than running 'rpm'.  If you need to use command because
+yum, dnf or zypper is insufficient you can add 'warn: false' to this command task or set 'command_warnings=False' in
+ansible.cfg to get rid of this message.
+```
+아까 나오던 핑크색 경고 문구가 안나옴
+
+### 'copy' Module 
+#### 개요
+- Controller 서버에서 원격 서버에 파일을 전송할 때 사용하는 모듈이다.
+
+![](./img/1.img/0039.png)
+#### 작업 1. 로컬 시스템에서의 작업
+- 기본 웹 페이지 파일 다운로드
+- Apache 기본 경로(/var/www/html)에 기본 파일(index.html) 생성
+
+![](./img/1.img/0040.png)
+
+![](./img/1.img/0041.png)
+
+#### 작업 2. public Cloud 시스템과 연동
+
+- /Ansible에 ec2.lst라는 파일 생성
+- /Ansible에 임의의 내용을 입력한 test.txt 파일 생성
+- AWS에서 EC2 Instance를 한 개 생성한 후 EC2 콘솔창에서 /ec2라는 디렉터리 생성
+- EC2 Instance의 보안에서 22번 포트를 추가
+- Public IP를 ec2.lst 파일에 입력한다.
+- /Ansible에 있는 test.txt를 EC2 Instance 시스템에 복사
+
+![](./img/1.img/0042.png)
+
+![](./img/1.img/0043.png)
+
+![](./img/1.img/0044.png)
+
+```
+ansible all -m service -a "name=httpd state=started"
+```
+
+```
+ansible all -m shell -a "ps -ef | grep httpd"
+```
+![](./img/1.img/0045.png)
+
+![](./img/1.img/0046.png)
+
+## 실습 4. 작업할 내용을 파일로 작성
+### 개요
+  - Ansible을 이용해서 웹서를 설치 하기 위해 몇 단계를 거쳤나?
+    - 기본 페이지 다운로드/업로드, 패키지 설치, 데몬 실행, 방화벽, 사이트 출력
+
+  - 'Ansible'은 여러 단계가 필요한 작업을 위해서 '플레이북(Playbook)'이라는 기능을 제공있다.
+         
+         
+  - '플레이북(Playbook)'의 사전적인 의미는 '각본, 작전, 계획'이라는 뜻으로 그중에서 '각본'이 가장 'Ansible'의 '플레이북(Playbook)'에 적합한 의미로 생각된다.
+
+
+  - 그 이유는, '플레이북(Playbook)'은 **미리 정의된 작업을 수행하는 절차적인 의미**가 들어 있기 때문이다.
+
+### playbook은 **야믈(Yaml)** 이라는 언어로 구성되어 있다.
+
+### Yaml 멱등성 비슷 VPN
+
+#### 가장 중요한 **멱등성(idempotence)** 이라는 특성을 가지고 있다.
+
