@@ -1,0 +1,139 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: EC2 for webserver
+Parameters:
+  KeyName:
+    Description: Name of KeyPair
+    Type: AWS::EC2::KeyPair::KeyName
+  AMI:
+    Description: AMI of EC2
+    Type: AWS::EC2::Image::Id
+    Default: ami-09cf633fe86e51bf0
+
+  AZpublic:
+    Description: AvailabilityZone for public
+    Type: AWS::EC2::AvailabilityZone::Name
+  AZprivate:
+    Description: AvailabilityZone for private
+    Type: AWS::EC2::AvailabilityZone::Name
+
+  VPCCidr:
+    Description: Cidr Block for VPC
+    Type: String
+    Default: 10.0.0.0/16
+  PublicSubnetCidr:
+    Description: Cidr Block for Public Subnet
+    Type: String
+    Default: 10.0.0.0/24
+  PrivateSubnetCidr:
+    Description: Cidr Block for Private Subnet
+    Type: String
+    Default: 10.0.10.0/24
+
+Resources:
+  VPC:
+    Type: AWS::EC2::VPC
+    Properties:
+      CidrBlock: !Ref VPCCidr
+      EnableDnsHostnames: true
+      Tags:
+        - Key: Name
+          Value: myVPC
+
+  PublicSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: !Ref PublicSubnetCidr
+      AvailabilityZone: !Ref AZpublic
+      MapPublicIpOnLaunch: true
+      Tags:
+        - Key: Name
+          Value: public subnet
+  PrivateSubnet:
+    Type: AWS::EC2::Subnet
+    Properties:
+      VpcId: !Ref VPC
+      CidrBlock: !Ref PrivateSubnetCidr
+      AvailabilityZone: !Ref AZprivate
+      Tags:
+        - Key: Name
+          Value: private subnet
+
+  IGW:
+    Type: AWS::EC2::InternetGateway
+    Properties:
+      Tags:
+        - Key: Name
+          Value: myigw
+  Attachigw:
+    Type: AWS::EC2::VPCGatewayAttachment
+    Properties:
+      InternetGatewayId: !Ref IGW
+      VpcId: !Ref VPC
+
+  PublicRT:
+    Type: AWS::EC2::RouteTable
+    Properties:
+      VpcId: !Ref VPC
+      Tags:
+        - Key: Name
+          Value: Public RT
+  PublicRoute:
+    Type: AWS::EC2::Route
+    DependsOn: Attachigw
+    Properties:
+      RouteTableId: !Ref PublicRT
+      DestinationCidrBlock: 0.0.0.0/0
+      GatewayId: !Ref IGW
+  PublicSubnetRTAssociation:
+    Type: AWS::EC2::SubnetRouteTableAssociation
+    Properties:
+      RouteTableId: !Ref PublicRT
+      SubnetId: !Ref PublicSubnet
+
+  SGforWeb:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: allow 22, 80
+      GroupName: webaccess
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+      VpcId: !Ref VPC
+  SGforDB:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: allow webserver
+      GroupName: dbaccess
+      SecurityGroupIngress:
+        - IpProtocol: -1
+          SourceSecurityGroupId : !GetAtt SGforWeb.GroupId
+      VpcId: !Ref VPC
+
+  EC2forWeb:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: !Ref AMI
+      KeyName: !Ref KeyName
+      AvailabilityZone: !GetAtt PublicSubnet.AvailabilityZone
+      InstanceType: t2.micro
+      SubnetId: !Ref PublicSubnet
+      SecurityGroupIds:
+        - !Ref SGforWeb
+      UserData:
+        Fn::Base64:
+          !Join [ "", [
+          "#!/bin/bash\n",
+          "#Install APM for Web Server\n",
+          "yum install -y mariadb* php httpd php-mysql\n",
+          "systemctl enable httpd mariadb\n",
+          "systemctl start httpd mariadb\n"] ]
+      Tags:
+        - Key: Name
+          Value: Web Server
