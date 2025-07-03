@@ -1,0 +1,44 @@
+services:
+  mydb:
+    image: mysql:8.0-debian
+    container_name: mysql_app
+    volumes:
+      - mydb_data:/var/lib/mysql
+    restart: always
+    ports:
+      - "3306:3306"
+    networks:
+      - backend-net
+    environment:
+      MYSQL_ROOT_PASSWORD: wordpress
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+
+  myweb:
+    depends_on:
+      - mydb
+    image: wordpress:latest
+    container_name: wordpress_app
+    ports:
+      - "8888:80"
+    networks:
+      - frontend-net
+      - backend-net
+    volumes:
+      - myweb_data:/var/www/html
+      - ${PWD}/myweb-log:/var/log
+    restart: always
+    environment:
+      WORDPRESS_DB_HOST: mydb:3306
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: wordpress
+      WORDPRESS_DB_NAME: wordpress
+
+networks:
+  frontend-net: {}
+  backend-net: {}
+
+volumes:
+  mydb_data: {}
+  myweb_data: {}
