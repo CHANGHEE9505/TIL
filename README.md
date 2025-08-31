@@ -133,33 +133,33 @@
 - **AI / Machine Learning**: Amazon Bedrock
 
 <a name="javascript-skills"></a>
-#### <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" />
+#### 📜 JavaScript
 - **Front-End Development**: DOM 조작 및 이벤트 처리, ES6+ 문법 활용, 비동기 처리(Promise, async/await)
 - **Basic Concepts**: 데이터 타입, 스코프, 클로저 등 핵심 개념 이해
 
 <a name="react-skills"></a>
-#### <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black" />
+#### ⚛️ React
 - **Component-Based-Architecture**: 컴포넌트 기반 아키텍처 이해 및 활용
 - **State Management**: `useState`, `useEffect` 등 Hooks를 사용한 상태 관리
 - **API-Integration**: Axios, Fetch API를 이용한 REST API 연동
 
 <a name="nodejs-skills"></a>
-#### <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white" />
+#### 🟢 Node.js
 - **Back-End Development**: Express.js를 이용한 REST API 서버 구축
 - **Module System**: CommonJS 모듈 시스템 이해 및 활용
 
 <a name="python-skills"></a>
-#### <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+#### 🐍 Python
 - **Back-End Development**: FastAPI를 이용한 REST API 서버 구축
 - **Database Integration**: SQLAlchemy를 이용한 MySQL 연동
 
 <a name="mysql-skills"></a>
-#### <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" />
+#### 🐬 MySQL
 - **Basic-SQL**: 기본적인 CRUD SQL 문법 사용
 - **Database-Modeling**: 간단한 데이터베이스 모델링
 
 <a name="github-skills"></a>
-#### <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" />
+#### 🐙 GitHub
 - **Version Control**: Git을 이용한 버전 관리
 - **Collaboration**: `push`, `pull`, `merge`, `branch` 등 협업을 위한 Git 명령어 활용
 - **CI/CD**: GitHub Actions를 이용한 간단한 CI/CD 파이프라인 구축 경험
