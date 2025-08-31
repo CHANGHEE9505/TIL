@@ -12,7 +12,7 @@
 ### 🛠️ **보유 기술 (Skills)**
 
 <details>
-  <summary>🐧 **Linux (상)**</summary>
+  <summary>![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)</summary>
   
   - **기본 설정**: 다양한 배포판 사용 경험 (CentOS, Ubuntu, Rocky Linux, Kali Linux), 네트워크 및 보안 초기 설정, 패키지 관리 (yum, apt), 소유권/허가권에 대한 이해 및 관리
   - **서버 핵심 서비스 구축 및 운영**: Web/WAS (Apache, Nginx) 구축, 가상 호스트 설정 및 부하 분산 구성
@@ -23,7 +23,7 @@
 </details>
 
 <details>
-  <summary>🐳 **Docker (중상)**</summary>
+  <summary>![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)</summary>
   
   - **이미지 관리**: Dockerfile을 직접 작성하여 커스텀 이미지 빌드, Docker Hub를 이용한 이미지 관리
   - **컨테이너 운영**: Apache, MariaDB 등 주요 애플리케이션의 컨테이너화, 데이터 영속성 관리
@@ -31,42 +31,57 @@
 </details>
 
 <details>
-  <summary>☸️ **Kubernetes (중상)**</summary>
+  <summary>![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)</summary>
   
   - **클러스터 구축 및 운영**: On-premise 환경에서 Kubernetes 클러스터 구축, Pod, Deployment, Service, ReplicaSet 등 핵심 오브젝트 운영
   - **트래픽 관리 및 스케일링**: Ingress를 통한 외부 트래픽 제어, HPA를 이용한 트래픽 기반 오토 스케일링
 </details>
 
 <details>
-  <summary>⚙️ **Terraform (중상)**</summary>
+  <summary>![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)</summary>
   
   - **인프라 자동화**: Terraform 코드를 사용하여 AWS 인프라(VPC, Subnet, EC2 등) 정의 및 자동화, 변수, 출력, 모듈을 활용하여 재사용 가능하고 효율적인 코드 작성
 </details>
 
 <details>
-  <summary>🤖 **Ansible (중상)**</summary>
+  <summary>![Ansible](https://img.shields.io/badge/Ansible-EE0000?style=for-the-badge&logo=ansible&logoColor=white)</summary>
   
   - **구성 관리 자동화**: Vagrant로 가상화 테스트 환경을 구축하고 Ansible 플레이북 작성, 다수 서버의 패키지 설치, 설정 변경 등 반복 작업을 자동화
   - **플레이북 작성**: 조건문, 반복문을 활용하여 유연하고 확장성 있는 자동화 스크립트 작성
 </details>
 
 <details>
-  <summary>🌐 **네트워크 (중상)**</summary>
-  
-  - **자격증**: 네트워크관리사 2급 자격 취득
-  - **라우터/스위치**: Cisco 장비 기본 설정, 라우팅 프로토콜(RIP, OSPF) 구성 경험
-  - **보안**: VPN (IPSec, SSL/TLS) 및 HTTPS 통신 원리 이해 및 구축, IDS/IPS, Proxy 서버 개념 이해 및 실습 환경에서 구축/테스트
-  - **모의 해킹**: Kali Linux 환경에서 주요 도구(Nmap, Metasploit, Wireshark 등) 활용, 네트워크 공격(포트 스캐닝, 스니핑, 스푸핑) 시나리오 분석 및 실습
-</details>
-
-<details>
-  <summary>☁️ **AWS (상)**</summary>
+  <summary>![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)</summary>
   
   - **컴퓨트 & 컨테이너**: EKS, EC2, Lambda
   - **네트워킹 및 콘텐츠 전송**: VPC, Route 53, CloudFront, ALB, API Gateway
   - **스토리지**: S3
   - **보안 및 자격 증명**: IAM, Cognito, ACM
   - **AI / Machine Learning**: Amazon Bedrock
+</details>
+
+<details>
+  <summary>![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)</summary>
+</details>
+
+<details>
+  <summary>![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)</summary>
+</details>
+
+<details>
+  <summary>![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)</summary>
+</details>
+
+<details>
+  <summary>![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)</summary>
+</details>
+
+<details>
+  <summary>![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)</summary>
+</details>
+
+<details>
+  <summary>![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)</summary>
 </details>
 
 ---
