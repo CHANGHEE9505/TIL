@@ -10,18 +10,64 @@
 ---
 
 ### 🛠️ **보유 기술 (Skills)**
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
-![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)
-![Ansible](https://img.shields.io/badge/Ansible-EE0000?style=for-the-badge&logo=ansible&logoColor=white)
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
-![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)
-![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white)
-![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
+
+<details>
+  <summary>🐧 **Linux (상)**</summary>
+  
+  - **기본 설정**: 다양한 배포판 사용 경험 (CentOS, Ubuntu, Rocky Linux, Kali Linux), 네트워크 및 보안 초기 설정, 패키지 관리 (yum, apt), 소유권/허가권에 대한 이해 및 관리
+  - **서버 핵심 서비스 구축 및 운영**: Web/WAS (Apache, Nginx) 구축, 가상 호스트 설정 및 부하 분산 구성
+  - **네트워크 서비스**: DNS (BIND), DHCP, NFS 서버 구축 및 장애 대응
+  - **원격 접속**: SSH, Telnet 등 원격 접속 프로토콜 설정 및 보안 강화
+  - **시스템 관리 및 자동화**: Crontab을 활용한 주기적인 작업 스케줄링, Shell script 작성
+  - **스토리지 관리**: LVM을 이용한 파티션 생성 및 확장, fstab을 통한 오토마운트 설정
+</details>
+
+<details>
+  <summary>🐳 **Docker (중상)**</summary>
+  
+  - **이미지 관리**: Dockerfile을 직접 작성하여 커스텀 이미지 빌드, Docker Hub를 이용한 이미지 관리
+  - **컨테이너 운영**: Apache, MariaDB 등 주요 애플리케이션의 컨테이너화, 데이터 영속성 관리
+  - **네트워크**: Docker Network에 대한 이해 및 컨테이너 간 통신 제어
+</details>
+
+<details>
+  <summary>☸️ **Kubernetes (중상)**</summary>
+  
+  - **클러스터 구축 및 운영**: On-premise 환경에서 Kubernetes 클러스터 구축, Pod, Deployment, Service, ReplicaSet 등 핵심 오브젝트 운영
+  - **트래픽 관리 및 스케일링**: Ingress를 통한 외부 트래픽 제어, HPA를 이용한 트래픽 기반 오토 스케일링
+</details>
+
+<details>
+  <summary>⚙️ **Terraform (중상)**</summary>
+  
+  - **인프라 자동화**: Terraform 코드를 사용하여 AWS 인프라(VPC, Subnet, EC2 등) 정의 및 자동화, 변수, 출력, 모듈을 활용하여 재사용 가능하고 효율적인 코드 작성
+</details>
+
+<details>
+  <summary>🤖 **Ansible (중상)**</summary>
+  
+  - **구성 관리 자동화**: Vagrant로 가상화 테스트 환경을 구축하고 Ansible 플레이북 작성, 다수 서버의 패키지 설치, 설정 변경 등 반복 작업을 자동화
+  - **플레이북 작성**: 조건문, 반복문을 활용하여 유연하고 확장성 있는 자동화 스크립트 작성
+</details>
+
+<details>
+  <summary>🌐 **네트워크 (중상)**</summary>
+  
+  - **자격증**: 네트워크관리사 2급 자격 취득
+  - **라우터/스위치**: Cisco 장비 기본 설정, 라우팅 프로토콜(RIP, OSPF) 구성 경험
+  - **보안**: VPN (IPSec, SSL/TLS) 및 HTTPS 통신 원리 이해 및 구축, IDS/IPS, Proxy 서버 개념 이해 및 실습 환경에서 구축/테스트
+  - **모의 해킹**: Kali Linux 환경에서 주요 도구(Nmap, Metasploit, Wireshark 등) 활용, 네트워크 공격(포트 스캐닝, 스니핑, 스푸핑) 시나리오 분석 및 실습
+</details>
+
+<details>
+  <summary>☁️ **AWS (상)**</summary>
+  
+  - **컴퓨트 & 컨테이너**: EKS, EC2, Lambda
+  - **네트워킹 및 콘텐츠 전송**: VPC, Route 53, CloudFront, ALB, API Gateway
+  - **스토리지**: S3
+  - **보안 및 자격 증명**: IAM, Cognito, ACM
+  - **AI / Machine Learning**: Amazon Bedrock
+</details>
 
 ---
 
@@ -29,7 +75,7 @@
 
 #### 1. PaaS 기반 '법카 플렉스' 챗봇 서비스 인프라 고도화 및 운영 대시보드 구축
 - **기간**: 2025.07.14 ~ 2025.08.22
-- **역할**: 인프라 설계 및 구축, CI/CD 파이프라인 구축, 모니터링 시스템 구축
+- **역할**: 프런트 및 백엔드 서비스 개발(주요역할), 인프라 설계 및 구축, ec2 CI/CD 파이프라인 구축, 모니터링 시스템 구축
 - **개요**: 온프레미스 환경의 '법카 플렉스' 서비스를 AWS 클라우드로 마이그레이션하고, MSA 구조에 기반한 고가용성 및 확장성 있는 인프라를 구축했습니다. 또한, 챗봇 기능 추가 및 운영 효율화를 위한 통합 모니터링 대시보드를 구현했습니다.
 - **주요 성과**:
     - EKS 클러스터와 Karpenter를 활용하여 트래픽에 따른 자동 확장(Auto-Scaling) 환경 구축
@@ -41,7 +87,7 @@
 
 #### 2. 온프레미스 환경 사내 메신저 서비스 인프라 구축
 - **기간**: (2025.05.20 ~ 2025.05.30)
-- **역할**: 인프라 설계 및 구축, 3-Tier 아키텍처 구성, 모니터링 시스템 구축
+- **역할**: 인프라 설계 및 구축, 3-Tier 아키텍처 구성
 - **개요**: 300명 규모의 스타트업을 위한 사내 메신저 서비스의 안정적이고 확장 가능한 온프레미스 IT 인프라를 구축했습니다.
 - **주요 성과**:
     - VMware 기반 가상화 환경 위에 Rocky Linux를 사용하여 Web-WAS-DB 3-Tier 아키텍처 구성
@@ -66,6 +112,7 @@
 - **클라우드 인프라**: AWS Public Cloud 활용 및 Terraform을 이용한 코드형 인프라(IaC) 구현
 - **프로젝트**: D-Cloud를 이용한 하이브리드 클라우드 프로젝트 수행
 
+![수료증 및 상장](assets/인증.jpg)
 ---
 
 ### 📜 **자격증 (Certifications)**
