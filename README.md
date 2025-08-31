@@ -11,6 +11,7 @@
 
 ### 🛠️ **보유 기술 (Skills)**
 
+<div style="display: inline-block; margin: 5px;">
 <details>
   <summary><img src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black"></summary>
   
@@ -21,7 +22,8 @@
   - **시스템 관리 및 자동화**: Crontab을 활용한 주기적인 작업 스케줄링, Shell script 작성
   - **스토리지 관리**: LVM을 이용한 파티션 생성 및 확장, fstab을 통한 오토마운트 설정
 </details>
-
+</div>
+<div style="display: inline-block; margin: 5px;">
 <details>
   <summary><img src="https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"></summary>
   
@@ -29,27 +31,31 @@
   - **컨테이너 운영**: Apache, MariaDB 등 주요 애플리케이션의 컨테이너화, 데이터 영속성 관리
   - **네트워크**: Docker Network에 대한 이해 및 컨테이너 간 통신 제어
 </details>
-
+</div>
+<div style="display: inline-block; margin: 5px;">
 <details>
   <summary><img src="https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white"></summary>
   
   - **클러스터 구축 및 운영**: On-premise 환경에서 Kubernetes 클러스터 구축, Pod, Deployment, Service, ReplicaSet 등 핵심 오브젝트 운영
   - **트래픽 관리 및 스케일링**: Ingress를 통한 외부 트래픽 제어, HPA를 이용한 트래픽 기반 오토 스케일링
 </details>
-
+</div>
+<div style="display: inline-block; margin: 5px;">
 <details>
   <summary><img src="https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white"></summary>
   
   - **인프라 자동화**: Terraform 코드를 사용하여 AWS 인프라(VPC, Subnet, EC2 등) 정의 및 자동화, 변수, 출력, 모듈을 활용하여 재사용 가능하고 효율적인 코드 작성
 </details>
-
+</div>
+<div style="display: inline-block; margin: 5px;">
 <details>
   <summary><img src="https://img.shields.io/badge/Ansible-EE0000?style=for-the-badge&logo=ansible&logoColor=white"></summary>
   
   - **구성 관리 자동화**: Vagrant로 가상화 테스트 환경을 구축하고 Ansible 플레이북 작성, 다수 서버의 패키지 설치, 설정 변경 등 반복 작업을 자동화
   - **플레이북 작성**: 조건문, 반복문을 활용하여 유연하고 확장성 있는 자동화 스크립트 작성
 </details>
-
+</div>
+<div style="display: inline-block; margin: 5px;">
 <details>
   <summary><img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white"></summary>
   
@@ -59,30 +65,37 @@
   - **보안 및 자격 증명**: IAM, Cognito, ACM
   - **AI / Machine Learning**: Amazon Bedrock
 </details>
-
+</div>
+<div style="display: inline-block; margin: 5px;">
 <details>
   <summary><img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"></summary>
 </details>
-
+</div>
+<div style="display: inline-block; margin: 5px;">
 <details>
   <summary><img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black"></summary>
 </details>
-
+</div>
+<div style="display: inline-block; margin: 5px;">
 <details>
   <summary><img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white"></summary>
 </details>
-
+</div>
+<div style="display: inline-block; margin: 5px;">
 <details>
   <summary><img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"></summary>
 </details>
-
+</div>
+<div style="display: inline-block; margin: 5px;">
 <details>
   <summary><img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white"></summary>
 </details>
-
+</div>
+<div style="display: inline-block; margin: 5px;">
 <details>
   <summary><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white"></summary>
 </details>
+</div>
 
 ---
 
