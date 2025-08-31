@@ -96,7 +96,7 @@
 ### 🛠️ **세부 기술 (Detailed Skills)**
 
 <a name="linux-skills"></a>
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black) Linux (상)
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
 - **기본 설정**: 다양한 배포판 사용 경험 (CentOS, Ubuntu, Rocky Linux, Kali Linux), 네트워크 및 보안 초기 설정, 패키지 관리 (yum, apt), 소유권/허가권에 대한 이해 및 관리
 - **서버 핵심 서비스 구축 및 운영**: Web/WAS (Apache, Nginx) 구축, 가상 호스트 설정 및 부하 분산 구성
 - **네트워크 서비스**: DNS (BIND), DHCP, NFS 서버 구축 및 장애 대응
@@ -105,27 +105,27 @@
 - **스토리지 관리**: LVM을 이용한 파티션 생성 및 확장, fstab을 통한 오토마운트 설정
 
 <a name="docker-skills"></a>
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white) Docker (중상)
+![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 - **이미지 관리**: Dockerfile을 직접 작성하여 커스텀 이미지 빌드, Docker Hub를 이용한 이미지 관리
 - **컨테이너 운영**: Apache, MariaDB 등 주요 애플리케이션의 컨테이너화, 데이터 영속성 관리
 - **네트워크**: Docker Network에 대한 이해 및 컨테이너 간 통신 제어
 
 <a name="kubernetes-skills"></a>
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white) Kubernetes (중상)
+![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
 - **클러스터 구축 및 운영**: On-premise 환경에서 Kubernetes 클러스터 구축, Pod, Deployment, Service, ReplicaSet 등 핵심 오브젝트 운영
 - **트래픽 관리 및 스케일링**: Ingress를 통한 외부 트래픽 제어, HPA를 이용한 트래픽 기반 오토 스케일링
 
 <a name="terraform-skills"></a>
-#### ![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white) Terraform (중상)
+#### ![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)
 - **인프라 자동화**: Terraform 코드를 사용하여 AWS 인프라(VPC, Subnet, EC2 등) 정의 및 자동화, 변수, 출력, 모듈을 활용하여 재사용 가능하고 효율적인 코드 작성
 
 <a name="ansible-skills"></a>
-#### ![Ansible](https://img.shields.io/badge/Ansible-EE0000?style=for-the-badge&logo=ansible&logoColor=white) Ansible (중상)
+#### ![Ansible](https://img.shields.io/badge/Ansible-EE0000?style=for-the-badge&logo=ansible&logoColor=white)
 - **구성 관리 자동화**: Vagrant로 가상화 테스트 환경을 구축하고 Ansible 플레이북 작성, 다수 서버의 패키지 설치, 설정 변경 등 반복 작업을 자동화
 - **플레이북 작성**: 조건문, 반복문을 활용하여 유연하고 확장성 있는 자동화 스크립트 작성
 
 <a name="aws-skills"></a>
-#### ![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white) AWS (상)
+#### ![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white) 
 - **컴퓨트 & 컨테이너**: EKS, EC2, Lambda
 - **네트워킹 및 콘텐츠 전송**: VPC, Route 53, CloudFront, ALB, API Gateway
 - **스토리지**: S3
@@ -133,33 +133,33 @@
 - **AI / Machine Learning**: Amazon Bedrock
 
 <a name="javascript-skills"></a>
-#### ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black) JavaScript
+#### ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 - **Front-End Development**: DOM 조작 및 이벤트 처리, ES6+ 문법 활용, 비동기 처리(Promise, async/await)
 - **Basic Concepts**: 데이터 타입, 스코프, 클로저 등 핵심 개념 이해
 
 <a name="react-skills"></a>
-#### ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black) React
+#### ![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black) 
 - **Component-Based-Architecture**: 컴포넌트 기반 아키텍처 이해 및 활용
 - **State Management**: `useState`, `useEffect` 등 Hooks를 사용한 상태 관리
 - **API-Integration**: Axios, Fetch API를 이용한 REST API 연동
 
 <a name="nodejs-skills"></a>
-#### ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white) Node.js
+#### ![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white) 
 - **Back-End Development**: Express.js를 이용한 REST API 서버 구축
 - **Module System**: CommonJS 모듈 시스템 이해 및 활용
 
 <a name="python-skills"></a>
-#### ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) Python
+#### ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) 
 - **Back-End Development**: FastAPI를 이용한 REST API 서버 구축
 - **Database Integration**: SQLAlchemy를 이용한 MySQL 연동
 
 <a name="mysql-skills"></a>
-#### ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white) MySQL
+#### ![MySQL](https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white) 
 - **Basic-SQL**: 기본적인 CRUD SQL 문법 사용
 - **Database-Modeling**: 간단한 데이터베이스 모델링
 
 <a name="github-skills"></a>
-#### ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white) GitHub
+#### ![GitHub](https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white)
 - **Version Control**: Git을 이용한 버전 관리
 - **Collaboration**: `push`, `pull`, `merge`, `branch` 등 협업을 위한 Git 명령어 활용
 - **CI/CD**: GitHub Actions를 이용한 간단한 CI/CD 파이프라인 구축 경험
