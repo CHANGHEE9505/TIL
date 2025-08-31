@@ -47,8 +47,8 @@
     - VMware 기반 가상화 환경 위에 Rocky Linux를 사용하여 Web-WAS-DB 3-Tier 아키텍처 구성
     - L4 스위치를 이용한 로드 밸런싱으로 서비스 가용성 확보
     - iptables를 활용한 방화벽 정책 설정으로 보안 강화
-    - Prometheus, Grafana를 이용한 서버 및 애플리케이션 모니터링 환경 구축
-- **관련 기술**: `VMware`, `Rocky Linux`, `Apache`, `Tomcat`, `MySQL`, `L4 Switch`, `iptables`, `Prometheus`, `Grafana`
+    
+- **관련 기술**: `VMware`, `CentOS`, `Apache`, `MySQL`, `L4 Switch`, `iptables`
 
 #### 3. Today I Learned (TIL)
 - **개요**: 더존비즈온 부트캠프 교육과정을 통해 매일 배운 내용을 기록하고 정리하는 개인 프로젝트입니다.
@@ -58,16 +58,13 @@
 
 ### 🎓 **교육 및 훈련 (Education & Training)**
 
-#### 더존비즈온 부트캠프 | Hybrid Cloud 전문가 양성과정 (2025.03 ~ 2025.08)
+#### [더존비즈온 | Hybrid Cloud 전문가 양성과정](https://dx.himedia.co.kr/) (2025.03 ~ 2025.08)
 - **On-Premises & 가상화**: Linux/Network 인프라, 애플리케이션 & DB 구축
 - **자동화 및 관리**: Ansible을 활용한 배포 자동화 및 관리
 - **컨테이너 오케스트레이션**: Docker, Kubernetes를 활용한 컨테이너 관리 및 모니터링 환경 구축
 - **CI/CD 파이프라인**: GitHub, Jenkins를 활용한 파이프라인 구축
 - **클라우드 인프라**: AWS Public Cloud 활용 및 Terraform을 이용한 코드형 인프라(IaC) 구현
 - **프로젝트**: D-Cloud를 이용한 하이브리드 클라우드 프로젝트 수행
-
-#### 선문대학교 | 컴퓨터공학부 (2021.03 ~ 2025.08)
-- 학점: 3.81 / 4.5
 
 ---
 
@@ -88,6 +85,5 @@
 
 ---
 
-### 📫 **연락처 (Contact)**
-- **Email**: i0223542@gmail.com
-- **LinkedIn**: (LinkedIn 프로필 링크를 여기에 넣어주세요)
+### 📫 **취미**
+- **Instagram**: [chang._.he](https://www.instagram.com/chang._.he) 
