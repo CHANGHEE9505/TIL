@@ -29,32 +29,70 @@
 
 ### 🚀 **프로젝트 (Projects)**
 
-#### 1. PaaS 기반 '법카 플렉스' 챗봇 서비스 인프라 고도화 및 운영 대시보드 구축
-- **기간**: 2025.07.14 ~ 2025.08.22
-- **역할**: 프런트 및 백엔드 서비스 개발(주요역할), 인프라 설계 및 구축, ec2 CI/CD 파이프라인 구축, 모니터링 시스템 구축
-- **개요**: 온프레미스 환경의 '법카 플렉스' 서비스를 AWS 클라우드로 마이그레이션하고, MSA 구조에 기반한 고가용성 및 확장성 있는 인프라를 구축했습니다. 또한, 챗봇 기능 추가 및 운영 효율화를 위한 통합 모니터링 대시보드를 구현했습니다.
-- **주요 성과**:
-    - EKS 클러스터와 Karpenter를 활용하여 트래픽에 따른 자동 확장(Auto-Scaling) 환경 구축
-    - Jenkins, ArgoCD를 이용한 CI/CD 파이프라인 구축으로 배포 자동화
-    - Prometheus, Grafana를 이용한 모니터링 시스템 구축 및 운영 대시보드 제공
-- **아키텍처**:
-  ![아키텍처](assets/architecture.png)
-- **관련 기술**: `AWS`, `EKS`, `Docker`, `Kubernetes`, `Ansible`, `Terraform`, `Jenkins`, `ArgoCD`, `Prometheus`, `Grafana`, `MongoDB`, `Kafka`
+### 1. 법카플렉스 프로젝트
 
-#### 2. 온프레미스 환경 사내 메신저 서비스 인프라 구축
-- **기간**: (2025.05.20 ~ 2025.05.30)
-- **역할**: 인프라 설계 및 구축, 3-Tier 아키텍처 구성
-- **개요**: 300명 규모의 스타트업을 위한 사내 메신저 서비스의 안정적이고 확장 가능한 온프레미스 IT 인프라를 구축했습니다.
-- **주요 성과**:
-    - VMware 기반 가상화 환경 위에 Rocky Linux를 사용하여 Web-WAS-DB 3-Tier 아키텍처 구성
-    - L4 스위치를 이용한 로드 밸런싱으로 서비스 가용성 확보
-    - iptables를 활용한 방화벽 정책 설정으로 보안 강화
-    
-- **관련 기술**: `VMware`, `CentOS`, `Apache`, `MySQL`, `L4 Switch`, `iptables`
+| 항목 | 내용 |
+| --- | --- |
+| **소개** | '법카 플렉스'는 직장인들을 위한 회식 장소 추천 플랫폼입니다. 기존 온프레미스 환경의 확장성 한계, 단일 장애점(SPOF) 문제, 제한적인 모니터링 환경을 해결하고, AWS Bedrock 기반의 신규 AI 챗봇 서비스를 도입하기 위해 클라우드 마이그레이션을 진행했습니다. |
+| **기간/인원** | 8주 (2025.07.07 - 2025.08.25) / 5명 |
+| **기술 스택** | `Ubuntu`, `Docker`, `Kubernetes`, `Helm`, `Grafana`, `Prometheus`, `Loki`, `React.js`, `FastAPI`, `Jenkins`, `Harbor`, `ArgoCD`, `GitHub`, `Kafka`, `MongoDB`, `Elasticsearch`, `Kibana`, `AWS` |
+| **결과물** | [https://github.com/hyegyeong-kang/ROOT](https://github.com/hyegyeong-kang/ROOT) |
 
-#### 3. Today I Learned (TIL)
-- **개요**: 더존비즈온 부트캠프 교육과정을 통해 매일 배운 내용을 기록하고 정리하는 개인 프로젝트입니다.
-- **주요 내용**: Linux, Network, AWS, Docker, Kubernetes, Terraform, Ansible 등 학습한 기술에 대한 상세한 내용과 실습 과정을 기록했습니다.
+**아키텍처**
+
+![아키텍처](assets/architecture.png)
+
+**주요 기능 상세**
+- **EKS 기반 컨테이너 오케스트레이션**: EC2 기반 k8s 환경을 AWS EKS로 전환하여 운영 부담 감소
+- **고가용성 확보 (Multi-AZ)**: DB 및 서비스 노드를 여러 가용 영역에 분산 배치하여 장애 발생 시 서비스 연속성 보장
+- **자동 확장 (Auto Scaling)**: Kubernetes HPA를 이용해 트래픽에 따라 Pod 수를 자동으로 조절하여 자원 효율성 확보
+- **서버리스 아키텍처 도입**: Lambda, API Gateway를 활용하고, MongoDB를 DynamoDB로 이전하여 서버리스 구축 **(담당)**
+- **하이브리드 클라우드 구성**: AWS Cognito와 기존 D-Cloud의 데이터베이스를 연동하여 회원 정보 이중 관리 **(담당)**
+- **MongoDB Replica Set 구축**: Primary/Secondary로 구성된 복제 세트를 구축하여 데이터 이중화 및 고가용성 확보
+- **Elasticsearch 연동 검색 서비스**: 대용량 식당 데이터의 빠른 검색을 위해 Elasticsearch 도입
+- **자동화된 CI/CD 파이프라인**: Github, Jenkins, Harbor, ArgoCD를 연동하여 빌드, 테스트, 배포 자동화
+- **실시간 알림 연동**: Jenkins 및 ArgoCD의 배포 결과를 Slack으로 실시간 전송
+- **WAF를 통한 웹 공격 방어**: SQL 인젝션, XSS 등 일반적인 웹 공격 차단 및 특정 IP 접근 제어 **(담당)**
+- **IAM을 통한 접근 제어**: IAM 역할과 정책을 통해 AWS 리소스 접근 권한 최소화 **(담당)**
+- **다차원적 시스템 모니터링**: Prometheus, Grafana, Kibana를 활용하여 인프라 및 애플리케이션 성능 지표 시각화 **(담당)**
+- **AI 챗봇 기능**: AWS Bedrock(Claude 3 Haiku)이 MongoDB의 리뷰 데이터를 요약하여 사용자에게 제공 **(담당)**
+
+---
+
+### 2. LMS 플랫폼 구축 프로젝트
+
+| 항목 | 내용 |
+| --- | --- |
+| **소개** | 'Adventure With Samadal'은 여러 외부 플랫폼 사용으로 인한 공지 누락, 과제 제출 혼선 문제를 해결하기 위해 SMDU(스마트 미디어 디지털 대학교) 맞춤형 학습 관리 시스템(LMS)을 구축하는 프로젝트입니다. 서버 기능을 물리적으로 분리하고 사용자 네트워크를 나누어 보안과 안정성을 강화했습니다. |
+| **기간/인원** | 2주 (2025.04.28 - 2025.05.12) / 3명 |
+| **기술 스택** | `CentOS`, `Windows 10 Server`, `VMware Workstation`, `Apache`, `PHP`, `MariaDB`, `SquirrelMail`, `sendmail`, `dovecot`, `BIND(DNS)`, `DHCP`, `Notion` |
+| **결과물** | 해당 프로젝트의 GitHub 링크는 제공되지 않았습니다. |
+
+**주요 기능 상세**
+- **서버 기능 분리**: Web, DB, Mail 기능을 각각 독립된 CentOS 서버로 분리하여 안정성 및 관리 효율성 증대
+- **네트워크 분리 및 보안 강화**: 교수와 학생의 네트워크를 별도 라우터로 분리하여 내부 트래픽 제어
+- **DHCP를 이용한 IP 자동 할당**: 학생용 네트워크에 DHCP 서버를 구성하여 IP 자동 할당 **(담당)**
+- **DNS 서버 구축**: BIND를 이용하여 lms.smdu.ac.kr, mail.smdu.ac.kr 등 내부 서비스 도메인 관리 **(담당)**
+- **DB 서버 설계 및 구축**: MariaDB 서버 구축 및 별도 디스크 파티션에 데이터를 분리 저장
+- **메일 서버 구축 및 연동**: SquirrelMail, sendmail, dovecot을 활용한 웹메일 시스템 구축 및 LMS와 연동 **(담당)**
+
+---
+
+### 3. 자연어 처리(NLP) 기술로 발표 능력을 분석하는 모바일 앱 개발 프로젝트
+
+| 항목 | 내용 |
+| --- | --- |
+| **소개** | 자연어 처리(NLP) 기술을 기반으로 사용자의 발표 능력을 스스로 분석하고 개선하도록 돕는 모바일 애플리케이션입니다. 발표에 대한 긴장감, 시간 관리의 어려움, 객관적인 피드백 부족 문제를 해결하기 위해 개발되었습니다. |
+| **기간/인원** | 8주 (2024.04.17 - 2024.06.09) / 4명 |
+| **기술 스택** | `React Native`, `Node.js`, `Python`, `MongoDB`, `NLP`, `Google Speech-to-Text API`, `Google Cloud Storage` |
+| **결과물** | [FeedBack-RN](https://github.com/ghkdckdgmlek/FeedBack-RN), [FeedBack-node](https://github.com/ghkdckdgmlek/FeedBack-node), [FeedBack-py](https://github.com/ghkdckdgmlek/FeedBack-py) |
+
+**주요 기능 상세**
+- **STT 및 오디오 기반 다각적 분석**: Google STT API로 음성을 텍스트로 변환하고, Librosa 라이브러리로 음성 원본을 분석
+- **발표 속도 및 에너지 분석**: Librosa를 활용해 전체 단어 수와 발표 시간을 계산하여 발표 속도(단어/분) 측정 **(담당)**
+- **침묵 구간 및 비형태소 감지**: Google STT의 타임스탬프를 이용해 단어 사이의 침묵 구간을 감지하고, 정규표현식으로 '음', '어' 등 불필요한 비형태소 사용 빈도 측정
+- **핵심 키워드 추출**: Okt 형태소 분석기와 TF-IDF, PageRank 알고리즘을 적용하여 내용의 핵심 키워드와 단어별 중요도 분석
+- **혐오 표현 감지**: 한국어 혐오 표현 데이터셋으로 학습된 앙상블 모델을 통해 부적절한 표현 사용 여부 탐지
 
 ---
 
